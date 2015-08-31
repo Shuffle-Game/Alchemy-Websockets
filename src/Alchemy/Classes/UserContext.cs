@@ -48,6 +48,8 @@ namespace Alchemy.Classes
         /// The path of this request.
         /// </summary>
         public string RequestPath = "/";
+        
+        public string UniqueKey { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserContext"/> class.
@@ -56,7 +58,9 @@ namespace Alchemy.Classes
         public UserContext(Context context)
         {
             Context = context;
+            UniqueKey = Guid.NewGuid().ToString("N");
         }
+
 
         /// <summary>
         /// The internal context connection header
